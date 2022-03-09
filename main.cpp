@@ -12,36 +12,36 @@ int main()
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
 
-        sf::ConvexShape convex;
+        sf::RectangleShape line(sf::Vector2f(sf::Vector2f(150, 5)));
+        line.setPosition(window.getSize().x / 2 + 43, window.getSize().y / 2);
+        line.setFillColor(sf::Color::Cyan);
+        line.rotate(-110);
 
-        convex.setPointCount(4);
+        sf::RectangleShape line2(sf::Vector2f(sf::Vector2f(150, 5)));
+        line2.setPosition(window.getSize().x / 2 - 60, window.getSize().y / 2);
+        line2.setFillColor(sf::Color::Red);
+        line2.rotate(-70);
 
-        convex.setFillColor(sf::Color(50,112,100));
+        sf::RectangleShape line3(sf::Vector2f(sf::Vector2f(65, 5)));
+        line3.setPosition(window.getSize().x / 2 + -40 , window.getSize().y / 2 - 50);
+        line3.setFillColor(sf::Color::White);
+        //line2.rotate(-70);
 
-        convex.setPoint(0, sf::Vector2f(window.getSize().x / 2 + 150, window.getSize().y / 2 - -200));
-        convex.setPoint(1, sf::Vector2f(window.getSize().x / 2 - 150, window.getSize().y / 2 - -200));
-        convex.setPoint(2, sf::Vector2f(window.getSize().x / 2 - 150, window.getSize().y / 2));
-        convex.setPoint(3, sf::Vector2f(window.getSize().x / 2 + 150, window.getSize().y / 2));
 
-        sf::RectangleShape rectangleShape(sf::Vector2f(50,100));
-        rectangleShape.setFillColor(sf::Color(255,255,255,180));
-        rectangleShape.setPosition(window.getSize().x / 2 - 30, window.getSize().y / 2 + 100);
+        sf::RectangleShape line4(sf::Vector2f(sf::Vector2f(150, 5)));
+        line4.setPosition(window.getSize().x / 2 , window.getSize().y / 2 + 200);
+        line4.setFillColor(sf::Color::Green);
+        line4.rotate(-90);
 
-        sf::RectangleShape rectangleShape2(sf::Vector2f(50,50));
-        rectangleShape2.setFillColor(sf::Color(170,100,50,100));
-        rectangleShape2.setPosition(window.getSize().x / 2 - 30, window.getSize().y / 2 -50);
-        rectangleShape2.setOutlineColor(sf::Color::Red);
-        rectangleShape2.setOutlineThickness(3);
+        sf::RectangleShape line5(sf::Vector2f(sf::Vector2f(90, 5)));
+        line5.setPosition(window.getSize().x / 2 + 5, window.getSize().y / 2 +120);
+        line5.setFillColor(sf::Color::Cyan);
+        line5.rotate(60);
 
-        sf::CircleShape triangle(180, 3);
-        triangle.setFillColor(sf::Color(50,112,100));
-        triangle.setPosition(window.getSize().x / 2 - 180, window.getSize().y / 2 - 270);
-
-        sf::RectangleShape rectangleShape3(sf::Vector2f(60,110));
-        rectangleShape3.setFillColor(sf::Color(150,255,255,120));
-        rectangleShape3.setPosition(window.getSize().x / 2 + 30, window.getSize().y / 2 -210);
-        rectangleShape3.setOutlineThickness(3);
-        rectangleShape3.setOutlineColor(sf::Color::Cyan);
+        sf::RectangleShape line6(sf::Vector2f(sf::Vector2f(90, 5)));
+        line6.setPosition(window.getSize().x / 2 + 5, window.getSize().y / 2 +120);
+        line6.setFillColor(sf::Color::White);
+        line6.rotate(310);
 
         while (window.pollEvent(event))
         {
@@ -51,11 +51,13 @@ int main()
         }
 
         window.clear();
-        window.draw(convex);
-        window.draw(rectangleShape);
-        window.draw(rectangleShape3);
-        window.draw(triangle);
-        window.draw(rectangleShape2);
+
+        window.draw(line);
+        window.draw(line2);
+        window.draw(line3);
+        window.draw(line4);
+        window.draw(line5);
+        window.draw(line6);
 
 
         window.display();
